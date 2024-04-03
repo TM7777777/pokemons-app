@@ -12,14 +12,6 @@ import { fetchCardListAsync } from '../../store/cardListSlice';
 import styles from './CardList.module.scss';
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 
-const CardSkeletons = () => (
-  <div className={styles['card-list__cards']}>
-    {[...new Array(6)].map((_, ind) => (
-      <CardSkeleton key={ind} />
-    ))}
-  </div>
-);
-
 const CardList = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const filteredList = useAppSelector(getFilteredListData);
@@ -31,14 +23,14 @@ const CardList = (): JSX.Element => {
   const bottomRef = useInfiniteScroll<HTMLDivElement>({ loadMore: handleFetchMoreClick });
 
   const filteredListJSX = useMemo(
-    () =>
-      filteredList.length > 0 && (
-        <div className={styles['card-list__cards']}>
-          {filteredList.map((item) => (
-            <CardItem key={item.id} data={item} />
-          ))}
-        </div>
-      ),
+    () => (
+      <div className={styles['card-list__cards']}>
+        {filteredList.length > 0 &&
+          filteredList.map((item) => <CardItem key={item.id} data={item} />)}
+        {isListLoading && [...new Array(6)].map((_, ind) => <CardSkeleton key={ind} />)}
+        <div ref={bottomRef} />
+      </div>
+    ),
     [filteredList, isListLoading],
   );
 
@@ -47,8 +39,6 @@ const CardList = (): JSX.Element => {
       className={cn(styles['card-list'], { [styles['card-list--compact']]: selectedId })}
     >
       {filteredListJSX}
-      <div ref={bottomRef} />
-      {isListLoading && <CardSkeletons />}
       {!isListLoading && filteredList.length === 0 && (
         <div className={styles['card-list__empty']}>Your pokemon list is empty!</div>
       )}
