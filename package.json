@@ -28,7 +28,7 @@
     "prettier:fix": "npm run prettier -- --write",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

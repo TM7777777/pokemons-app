@@ -12,7 +12,7 @@ Stack: React / TS / Redux Toolkit / SCSS / Ant-design / Jest
 git clone https://github.com/TM7777777/pokemons-app.git
 ```
 
-2. Install dependencies using npm:
+2. Install dependencies using npm (Node v16.16.0):
 
 ```bash
 npm install
