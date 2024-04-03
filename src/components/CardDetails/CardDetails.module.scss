@@ -1,0 +1,48 @@
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-img {
+    animation: pulsate 3s ease-in-out 0s infinite normal none running;
+  }
+}
+
+.card-details__enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.card-details__enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.card-affix {
+  flex-basis: var(--card-details-width);
+  margin: 0 auto;
+}
+
+.card-details {
+  margin: 1rem 0 0.5rem;
+}
+
+.card-details__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+}

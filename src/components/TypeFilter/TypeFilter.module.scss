@@ -1,0 +1,13 @@
+.type-filter {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  margin: 0.5rem 1.5rem;
+  box-shadow: 0 0 5px 2px cadetblue;
+  border-radius: 6px;
+}
+
+.type-filter__select {
+  width: var(--card-details-width);
+}

@@ -1,0 +1,35 @@
+.card-link:link,
+.card-link:visited {
+  text-decoration: none;
+}
+
+.card {
+  width: var(--card-item-width);
+  margin: 1rem 0.5rem 0.5rem;
+
+  &:hover {
+    outline: 2px solid var(--pink-500);
+    transform: scale(1.01);
+  }
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card__tag {
+  margin-right: 0.4rem;
+  background-color: cadetblue;
+  color: #fff;
+}

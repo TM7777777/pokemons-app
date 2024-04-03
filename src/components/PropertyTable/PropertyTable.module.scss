@@ -1,0 +1,13 @@
+.property-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.property-table th,
+.property-table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.2rem;
+  border: 2px solid #ccc;
+  text-transform: capitalize;
+}

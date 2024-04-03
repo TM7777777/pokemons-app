@@ -1,0 +1,13 @@
+:root {
+  --card-item-width: 14rem;
+  --card-details-width: 14rem;
+  --card-details-x-margin: 1rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+}

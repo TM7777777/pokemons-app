@@ -1,0 +1,35 @@
+.card-list {
+  flex-basis: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.card-list__empty {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-list--compact {
+  flex-basis: calc(100% - var(--card-details-width) - var(--card-details-x-margin) * 2);
+}
+
+.card-list__cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.card-list__fetch-more {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.card-list__fetch-more-btn {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+  max-width: 30rem;
+}
