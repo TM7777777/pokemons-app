@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { prop, compose, equals } from 'ramda';
 import { RootState } from '..';
-import { Pokemon, Move } from '../../types';
+import { Move } from '../../types';
 
 const domainSelector = (state: RootState) => state.list;
 
@@ -16,11 +16,11 @@ export const getChosenTypeIds = createSelector(domainSelector, prop('selectedTyp
 export const getChosenCardData = createSelector(
   getListData,
   getChosenCardId,
-  (data, id) => (id ? data.find((item) => item.id === id) : ({} as Pokemon)),
+  (data, id) => (id ? data.find((item) => item.id === id) : null),
 );
 
 export const getGroupedPokemonMoves = createSelector(getChosenCardData, (data) =>
-  data?.moves.reduce<Record<string, Pick<Move['move'], 'name'>[]>>((acc, move) => {
+  data?.moves?.reduce<Record<string, Pick<Move['move'], 'name'>[]>>((acc, move) => {
     move.version_group_details.forEach((detail) => {
       const methodName = detail.move_learn_method.name;
       if (!acc[methodName]) {
