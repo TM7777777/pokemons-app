@@ -20,7 +20,6 @@ export const useInfiniteScroll = <T extends HTMLElement>({
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        console.log('tet');
         const firstEntry = entries[0];
         if (firstEntry.isIntersecting) {
           loadMoreHandler();

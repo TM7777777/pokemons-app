@@ -21,7 +21,7 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && node postbuild.ts",
     "eslint": "eslint \"./src/**/**.{js,jsx,ts,tsx}\" --cache --cache-location \"./.cache/eslint/.eslintcache\"",
     "eslint:fix": "npm run eslint -- --fix",
     "prettier": "prettier \"./src/**/**.{js,jsx,ts,tsx,css}\" --check",
